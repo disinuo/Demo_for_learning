@@ -14,11 +14,12 @@ class Animal{
 class Dog extends Animal{
 
 }
-var animal=new Animal('haha');
+var animal=new Animal('animalooo');
 console.log(animal.name);
 
-var dog=new Dog('gehhhhh');
+var dog=new Dog('dogge');
 console.log(dog.name);
+console.log(dog instanceof Animal); //true
 //---------------------------------------------------------------------
 
 //--------don't know how to extend the constructor---------------------------------------------
@@ -35,6 +36,18 @@ var Fiction = function (name) {this.name=name};
 Fiction.prototype=new Book(name);
 
 var book=new Book('Harry Porter');
-var fiction=new Fiction('Blind');
+var blind_fiction=new Fiction('Blind');
 console.log(book.getName());
-console.log(fiction.getName());
+console.log(blind_fiction.getName());
+console.log(blind_fiction.constructor);
+console.log(blind_fiction instanceof Book); //true
+
+console.log("---------------------------------------");
+
+//---------------------------------------------------------------------
+console.log(Book.prototype.constructor);//this and next line print different things
+console.log(Book);
+
+console.log(Animal.prototype.constructor); //this and next line print the same thing
+console.log(Animal);
+
