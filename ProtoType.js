@@ -25,7 +25,6 @@ console.log(dog.sleep());   //sleeping
 //------------------------------------------------------
 //Or if you don't use `new`
 //the codes will not be added
-
 var cat=Animal('Kitty');
 console.log(cat);       //undefined.Because the function `Animal` doesn't return anything
 
