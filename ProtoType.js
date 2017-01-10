@@ -9,6 +9,7 @@ Animal.prototype={
         return "sleeping~";
     }
 }
+
 var dog=new Animal('dogge');
 console.log(dog.name);      //dogge
 console.log(dog.sleep());   //sleeping
