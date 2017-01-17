@@ -49,3 +49,5 @@ console.log(floatA);
 //3.It can only identify string starting with + or - or number,otherwise return `NaN`---4,7
 //4.starting 0(s) will be ignored---1
 //********************************************************
+
+console.log('aac'<'aaa');
