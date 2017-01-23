@@ -12,5 +12,6 @@
 博客的文字表述会多一点，选择部分代码~
 仓库这边，注释，尽量用英文写！锻炼下英语~~~
 ^ ^
-代码对应的博客如下~~欢迎指出错误~~~
-Array.js---[javascript厉害的Array](https://disinuo.me/2017/01/19/2017-01-19-javascript_array/)
+代码对应的博客如下,欢迎指出错误^ ^~~~
+
+|Array.js | [javascript厉害的Array](https://disinuo.me/2017/01/19/2017-01-19-javascript_array/)
