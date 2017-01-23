@@ -4,6 +4,8 @@
 var pattern=/mom( and dad( and baby)?)?/gi;
 var text='mom and dad and baby';
 var matches=pattern.exec(text);
+//same with
+// var matches=text.match(pattern);
 console.log(RegExp.input);
 console.log('-------------------------------');
 if(matches){
@@ -32,3 +34,4 @@ if(matches1){
     console.log(matches1[3]);
 }
 
+console.log(Global);

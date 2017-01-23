@@ -43,4 +43,32 @@ console.log(a.hasOwnProperty('a'));// true
 
 var d = Object.create(null);
 // d ---> null
-console.log(d.hasOwnProperty)
+console.log(d.hasOwnProperty);
+//------------------------------------------------------
+//------  Prototype & constructor -------------------
+console.log('------------------------------------------------------');
+var Person=function (name,age) {
+    this.name=name;
+    this.age=age;
+    this.hobbies=['Drawing','Music'];
+};
+Person.prototype={
+    constructor:Person,
+    sex:'Male',
+    friends:['Lihua','Oliver'],
+    getName:function () {
+        return this.name;
+    }
+};
+
+var person1=new Person('Lily',18);
+var person2=new Person('Amy',24);
+person1.sex='Female';
+console.log(person1.sex);//Female
+console.log(person2.sex);//Male
+person1.friends.push('Selena');
+console.log(person1.friends);//Lihua,Oliver,Selena
+console.log(person2.friends);//Lihua,Oliver,Selena
+person1.hobbies.push('Movie');
+console.log(person1.hobbies);//Drawing,Music,Movie
+console.log(person2.hobbies);//Drawing,Music
