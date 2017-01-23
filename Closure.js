@@ -1,17 +1,28 @@
 /**
  * Created by disinuo on 17/1/19.
  */
-function say667() {
-    // Local variable that ends up within closure
-    var num = 42;
-    var say = function() { console.log(num); }
-    num++;
-    return say;
+var Person=function(){
+    var name='Lily';
+    var age=20;
+    return {
+        getName:function(){
+            return name;
+        },
+        addAge:function () {
+            age++;
+        },
+        getAge:function () {
+           return age;
+        }
+    }
 }
-var sayNumber = say667();
-sayNumber(); // logs 43
-sayNumber(); // logs 43
-
+var func=Person();
+console.log(func.name);     //undefined
+console.log(func.getName());//Lily
+func.addAge();
+console.log(func.getAge()); //21
+console.log('********************************');
+//**********************************************************
 var gLogNumber, gIncreaseNumber, gSetNumber;
 function setupSomeGlobals() {
     // Local variable that ends up within closure
@@ -35,9 +46,6 @@ gLogNumber(); // 42
 
 oldLog() // 5
 
-/*
-http://stackoverflow.com/questions/111102/how-do-javascript-closures-work
-*/
 // if you use the function keyword inside another function, you are creating a closure.
 
 
@@ -46,6 +54,11 @@ function buildList(list) {
     for (var i = 0; i < list.length; i++) {
         var item = 'item' + i;
         result.push( function() {console.log(item + ' ' + list[i])} );
+        /**
+         result.push( function(i){
+            return function() {console.log(item + ' ' + list[i])}
+         }(i) );
+         */
     }
     return result;
 }
@@ -69,4 +82,39 @@ function sayAlice() {
     return say;
 }
 sayAlice()();// logs "Hello Alice"
+//**********************************************************
+console.log('---------------------------');
 
+function createFunction() {
+    var result=[];
+    for(var i=0;i<10;i++){
+        result[i]=function () {
+            return i;
+        } // 10,10,10,10,10,10,10,10,10,10
+        // result[i]=function (x) {
+        //     return function(){
+        //         return x;
+        //     }
+        // }(i); // 0,1,2,3,4,5,6,7,8,9
+    }
+    return result;
+}
+
+var funcs=createFunction();
+for(var i=0;i<funcs.length;i++){
+    console.log(funcs[i]());
+}
+//*********  Factory  ***********************************
+function isType(type){ //factory
+    return function(obj){
+        return Object.prototype.toString.call(obj)==='[object '+type+']';
+    }
+}
+var isString=isType('String');//function to check whether the variable is a string
+var isNumber=isType('Number');//function to check whether the variable is a number
+var isArray=isType('Array');//function to check whether the variable is an array
+
+console.log(isNumber(233));     //true
+console.log(isNumber('hhh'));   //false
+console.log(isString('hhh'));   //true
+console.log(isArray([1,2,3]));  //true

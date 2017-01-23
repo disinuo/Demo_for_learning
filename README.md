@@ -17,3 +17,4 @@
 | 代码 | 博客 |
 | :--- | :--- |
 | Array.js | [javascript厉害的Array](https://disinuo.me/2017/01/19/2017-01-19-javascript_array/) |
+| Closure.js | [javascript迷之闭包](https://disinuo.me/2017/01/23/2017-01-23-javascript_closure/) |
