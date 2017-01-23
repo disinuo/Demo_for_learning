@@ -14,6 +14,6 @@
 ^ ^
 代码对应的博客如下,欢迎指出错误^ ^~~~
 
-| ID | 灵活性 |
+| 代码 | 博客 |
 | :--- | :--- |
 | Array.js | [javascript厉害的Array](https://disinuo.me/2017/01/19/2017-01-19-javascript_array/) |
