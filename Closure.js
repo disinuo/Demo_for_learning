@@ -1,28 +1,28 @@
 /**
  * Created by disinuo on 17/1/19.
  */
+//********** private *************************************
 var Person=function(){
     var name='Lily';
     var age=20;
-    return {
-        getName:function(){
-            return name;
-        },
-        addAge:function () {
-            age++;
-        },
-        getAge:function () {
-           return age;
-        }
+    this.getName=function(){
+        return name;
+    };
+    this.addAge=function () {
+        age++;
+    };
+    this.getAge=function () {
+       return age;
     }
+
 }
-var func=Person();
+var func=new Person();
 console.log(func.name);     //undefined
 console.log(func.getName());//Lily
 func.addAge();
 console.log(func.getAge()); //21
 console.log('********************************');
-//**********************************************************
+//*************** one call,one closure ***********************************
 var gLogNumber, gIncreaseNumber, gSetNumber;
 function setupSomeGlobals() {
     // Local variable that ends up within closure
@@ -48,7 +48,7 @@ oldLog() // 5
 
 // if you use the function keyword inside another function, you are creating a closure.
 
-
+//************* example of `For` *********************************************
 function buildList(list) {
     var result = [];
     for (var i = 0; i < list.length; i++) {
@@ -62,7 +62,6 @@ function buildList(list) {
     }
     return result;
 }
-
 function testList() {
     var fnlist = buildList([1,2,3]);
     // Using j only to help prevent confusion -- could use i.
@@ -70,11 +69,10 @@ function testList() {
         fnlist[j]();
     }
 }
-
 testList() //logs "item2 undefined" 3 times
 // Note that when you run the example, "item2 undefined" is alerted three times! This is because just like previous examples, there is only one closure for the local variables for buildList. When the anonymous functions are called on the line fnlist[j](); they all use the same single closure, and they use the current value for i and item within that one closure (where i has a value of 3 because the loop had completed, and item has a value of 'item2'). Note we are indexing from 0 hence item has a value of item2. And the i++ will increment i to the value 3.
 
-
+//**********************************************************
 function sayAlice() {
     var say = function() { console.log(alice); }
     // Local variable that ends up within closure
@@ -82,9 +80,9 @@ function sayAlice() {
     return say;
 }
 sayAlice()();// logs "Hello Alice"
-//**********************************************************
 console.log('---------------------------');
 
+//************* example of `For` *********************************************
 function createFunction() {
     var result=[];
     for(var i=0;i<10;i++){
@@ -99,7 +97,6 @@ function createFunction() {
     }
     return result;
 }
-
 var funcs=createFunction();
 for(var i=0;i<funcs.length;i++){
     console.log(funcs[i]());
