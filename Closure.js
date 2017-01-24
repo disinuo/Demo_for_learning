@@ -82,7 +82,7 @@ function sayAlice() {
 sayAlice()();// logs "Hello Alice"
 console.log('---------------------------');
 
-//************* example of `For` *********************************************
+//************* example of `For` ************************
 function createFunction() {
     var result=[];
     for(var i=0;i<10;i++){
@@ -110,8 +110,17 @@ function isType(type){ //factory
 var isString=isType('String');//function to check whether the variable is a string
 var isNumber=isType('Number');//function to check whether the variable is a number
 var isArray=isType('Array');//function to check whether the variable is an array
-
 console.log(isNumber(233));     //true
 console.log(isNumber('hhh'));   //false
 console.log(isString('hhh'));   //true
 console.log(isArray([1,2,3]));  //true
+console.log('---------------------');
+//*************imitation of block ************************
+for(var p=0;p<5;p++){
+}
+(function(){
+    for(var m=0;m<5;m++){
+    }
+})();
+console.log(p);//5
+console.log(m);//Error! m is not defined
