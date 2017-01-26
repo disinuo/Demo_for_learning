@@ -1,27 +1,6 @@
 /**
  * Created by disinuo on 17/1/10.
  */
-//--------------- `class`keyword in ECMAScript6-----------------------
-class Animal{
-    constructor(name){
-        this.name=name;
-    }
-    getName(){
-        return this.name;
-    }
-}
-
-class Dog extends Animal{
-
-}
-var animal=new Animal('animalooo');
-console.log(animal.name);
-
-var dog=new Dog('dogge');
-console.log(dog.name);
-console.log(dog instanceof Animal); //true
-console.log('-------------------'); //true
-//---------------------------------------------------------------------
 
 //-------- Another way ---------------------------------------------
 var Book=function (name) {
@@ -45,12 +24,32 @@ Fiction.prototype.getAuthor=function () {
 }
 var book=new Book('Blind');
 var blind_fiction=new Fiction('Harry Porter','J.K.');
-console.log(book.getName());
-console.log(blind_fiction.getName());
-console.log(blind_fiction.getAuthor());
+console.log(book.getName());            //Blind
+console.log(blind_fiction.getName());   //Harry Porter
+console.log(blind_fiction.getAuthor()); //J.K.
 console.log(blind_fiction.constructor);
 console.log(blind_fiction instanceof Book); //true
 
 console.log("----------------------------");
 console.log(Book.prototype.constructor);
-console.log(Animal.prototype.constructor);
+
+//--------------- `class`keyword in ECMAScript6-----------------------
+class Animal{
+    constructor(name){
+        this.name=name;
+    }
+    getName(){
+        return this.name;
+    }
+}
+
+class Dog extends Animal{
+
+}
+var animal=new Animal('animalooo');
+console.log(animal.getName());  //animalooo
+console.log(animal.name);       //animalooo
+
+var dog=new Dog('dogge');
+console.log(dog.name);      //dogge
+console.log(dog instanceof Animal); //true

@@ -18,3 +18,4 @@
 | :--- | :--- |
 | Array.js | [javascript厉害的Array](https://disinuo.me/2017/01/19/2017-01-19-javascript_array/) |
 | Closure.js | [javascript迷之闭包](https://disinuo.me/2017/01/23/2017-01-23-javascript_closure/) |
+| Prototype.js | [javascript关键字new](https://disinuo.me/2017/01/10/2017-01-10-javascript_new/),[javascript 原型与构造器之‘原型’](https://disinuo.me/2017/01/26/2017-01-26-javascript_prototype/),[javascript 原型与构造器之‘构造器’](https://disinuo.me/2017/01/26/2017-01-26-javascript_constructor/)

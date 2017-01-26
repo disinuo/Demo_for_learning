@@ -22,12 +22,26 @@ console.log(dog.sleep());   //sleeping
 //     this.name=name;
 //     return this;
 // }
-//------------------------------------------------------
+//-----------
 //Or if you don't use `new`
 //the codes will not be added
 var cat=Animal('Kitty');
-console.log(cat);       //undefined.Because the function `Animal` doesn't return anything
-
+console.log(cat);       //undefined.  Because the function `Animal` doesn't return anything
+//------------------------------------------------------
+console.log('----------------------');
+var Animal=function(){
+}
+Animal.prototype={
+    name:'Dogge',
+    sleep:function(){
+        return "sleeping~";
+    }
+}
+var dog=new Animal();
+console.log(dog.name); //Dogge
+console.log(dog);
+//------------------------------------------------------
+console.log('----------------------');
 var a = {a: 1};
 // a ---> Object.prototype ---> null
 
@@ -43,10 +57,10 @@ console.log(a.hasOwnProperty('a'));// true
 
 var d = Object.create(null);
 // d ---> null
-console.log(d.hasOwnProperty);
+console.log(d.hasOwnProperty);//undefined
 //------------------------------------------------------
 //------  Prototype & constructor -------------------
-console.log('------------------------------------------------------');
+console.log('----------------------');
 var Person=function (name,age) {
     this.name=name;
     this.age=age;
@@ -68,6 +82,9 @@ console.log(person1.sex);//Female
 console.log(person2.sex);//Male
 person1.friends.push('Selena');
 console.log(person1.friends);//Lihua,Oliver,Selena
+console.log(person2.friends);//Lihua,Oliver,Selena
+person1.friends=['Lihua'];
+console.log(person1.friends);//Lihua
 console.log(person2.friends);//Lihua,Oliver,Selena
 person1.hobbies.push('Movie');
 console.log(person1.hobbies);//Drawing,Music,Movie
