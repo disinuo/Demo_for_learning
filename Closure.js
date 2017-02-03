@@ -86,8 +86,9 @@ console.log('---------------------------');
 function createFunction() {
     var result=[];
     for(var i=0;i<10;i++){
+        var x=i;
         result[i]=function () {
-            return i;
+            return x;
         } // 10,10,10,10,10,10,10,10,10,10
         // result[i]=function (x) {
         //     return function(){
