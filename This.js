@@ -6,7 +6,7 @@ var func=function(x,y){
 }
 var r={id:'r'},g={id:'g'},b={id:'b'};
 r.method=func;
-// -------下面是调用啦-----------------
+// -------------------------------
 func(g,b);     // <global>,g,b
 r.method(g,b); // r,g,b
 func.call(r,g,b); // r,g,b
